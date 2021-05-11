@@ -1,43 +1,44 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MifotoApp());
+void main() => runApp(MiFotoApp());
 
-class MifotoApp extends StatelessWidget {
+class MiFotoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Mi ejemplo',
       debugShowCheckedModeBanner: false,
+      title: "MI EJEMPLO",
       theme: ThemeData(
-        primarySwatch: Colors.amber,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+        primarySwatch: Colors.cyan,
+        visualDensity: VisualDensity.adaptivePlatformDensity, //finvisualdensity
+      ), //fin theme
       home: PaginaInicio(),
-    ); //fin de material
-  } // fin de widget
-} // fin clase MifotoApp
+    ); //fin del returnmaterialapp
+  } //finbuildmifotoapp
+} //finclasefoto
 
 class PaginaInicio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Agregando Bordes App de Camila'),
+        title: Text("Bordes en la app Camila"),
         centerTitle: true,
-      ), //fin de appbar
+      ), //fin appbar
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             children: [
               SizedBox(height: 20),
+
               Container(
                 height: 100,
                 width: 200,
                 decoration: BoxDecoration(
-                  color: Colors.amber[50],
+                  color: Colors.cyan[100],
                   borderRadius: BorderRadius.circular(25),
                   border: Border.all(
-                    color: Colors.purple,
+                    color: Colors.yellow[200],
                     width: 5,
                   ),
                 ),
@@ -46,31 +47,32 @@ class PaginaInicio extends StatelessWidget {
                     'Camila Villegas',
                     style: TextStyle(fontSize: 18),
                   ),
-                ),
-              ), //fin de contenedor
-              SizedBox(height: 50),
+                ), //fin child center
+              ), //fin de el container nombre
+              SizedBox(
+                height: 50,
+              ),
               Container(
-                height: 100,
-                width: 100,
-                child: Icon(
-                  Icons.account_box,
-                  color: Colors.amber,
-                  size: 100,
-                ),
+                height: 150,
+                width: 150,
                 decoration: BoxDecoration(
+                  color: Colors.indigo,
+                  image: DecorationImage(image: NetworkImage("https://raw.githubusercontent.com/CamilaVS/Mis_imagenes/main/camila.jpg"), alignment: Alignment.topCenter),
                   border: Border(
                     top: BorderSide(
-                      color: Colors.purple,
+                      color: Colors.purple[300],
                       width: 5.0,
                     ),
                     bottom: BorderSide(
-                      color: Colors.purple,
+                      color: Colors.purple[300],
                       width: 5.0,
                     ),
                   ),
-                ),
-              ), //fin contenedor foto
-              SizedBox(height: 50),
+                ), //fin de el decoration box
+              ), //fin de el container foto
+              SizedBox(
+                height: 50,
+              ),
               Container(
                 height: 100,
                 width: 200,
@@ -91,11 +93,12 @@ class PaginaInicio extends StatelessWidget {
                     ),
                   ),
                 ),
-              ), //fin contenedor grupo especialidad
-            ], //fin del niño
-          ), //fin de columna
-        ), //centrado
-      ), //fin de single en body
-    ); //fin de scaffold
-  }
-}
+              ), //fin de el container del texto del grupo
+            ], //fin del children
+          ), //fin de la columna child
+        ), //fin del bodycenter
+      ), //finsinglechild
+    ); //fin scaffold
+  } //fin build widget pagina de inicio
+} //fin clase pagina de inicio
+
